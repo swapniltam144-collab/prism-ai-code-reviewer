@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 # Load environment BEFORE importing app modules
 load_dotenv()
 
-from app.github_service import fetch_pr_files
+from app.github_service import fetch_pr_files, post_review_summary
 from app.code_reviewer import analyze_code
 
 async def test_full_flow():
@@ -48,6 +48,18 @@ async def test_full_flow():
         
         print(f"\n✅ AI Review Complete!")
         print(f"   Found {len(ai_feedback)} review comments\n")
+        
+        print("4️⃣ Posting AI review summary comment to GitHub PR...")
+        review_comments = []
+        for c in ai_feedback:
+            review_comments.append({
+                "file": test_file["filename"],
+                "line": c.get("line", 0),
+                "severity": c.get("severity", "info"),
+                "comment": c.get("comment", "")
+            })
+        resp = await post_review_summary(owner, repo, pr_number, review_comments)
+        print(f"✅ PR comment posted (id: {resp.get('id', 'unknown')})\n")
         
         print("=" * 60)
         print("📝 AI Review Comments:")
