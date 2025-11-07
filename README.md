@@ -1,4 +1,4 @@
-# DeepSeek AI Code Reviewer
+# AI Code Change Reviewer
 
 An AI-powered code review system that automatically reviews GitHub pull requests using DeepSeek's AI model.
 
