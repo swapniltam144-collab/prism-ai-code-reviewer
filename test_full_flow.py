@@ -11,7 +11,7 @@ from app.code_reviewer import analyze_code
 async def test_full_flow():
     """Test the complete flow: GitHub → DeepSeek → Review"""
     
-    print("🚀 Testing Full AI Code Review Flow\n")
+    print("Testing Full AI Code Review Flow\n")
     print("=" * 60)
     
     # Configuration
@@ -19,7 +19,7 @@ async def test_full_flow():
     repo = "agenticweb-api"
     pr_number = 1
     
-    print(f"\n1️⃣ Fetching PR files from GitHub...")
+    print(f"\n Fetching PR files from GitHub...")
     print(f"   Repository: {owner}/{repo}")
     print(f"   PR Number: #{pr_number}\n")
     
