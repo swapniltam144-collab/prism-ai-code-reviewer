@@ -37,7 +37,7 @@ async def post_review_summary(owner: str, repo: str, pr_number: int, review_comm
             line = c.get("line", 0)
             severity = c.get("severity", "info").capitalize()
             comment = c.get("comment", "").strip()
-            emoji = {"low": "🟢", "medium": "🟠", "high": "🔴"}.get(c.get("severity", "").lower(), "💡")
+            emoji = {"Low": "🟢", "Medium": "🟠", "High": "🔴"}.get(c.get("severity", "").lower(), "💡")
 
             summary_body += f"{emoji} **{severity}** — `{file}` (L{line}): {comment}\n"
 
