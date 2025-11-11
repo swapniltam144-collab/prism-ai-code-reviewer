@@ -35,9 +35,8 @@ async def github_webhook(payload: PullRequestPayload, request: Request):
             })
 
     # Format feedback as PR comment
-    body = "### 🤖 AI Code Review Summary\n\n"
-    for c in review_comments:
-        body += f"- **{c['file']} (L{c['line']}):** {c['comment']} *(severity: {c['severity']})*\n"
+    from .github_service import post_review_summary
 
-    await post_pr_comment(owner, repo, pr_number, body)
+    await post_review_summary(owner, repo, pr_number, review_comments)
+    
     return {"status": "AI review posted", "count": len(review_comments)}
