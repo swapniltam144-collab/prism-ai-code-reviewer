@@ -15,8 +15,8 @@ async def test_full_flow():
     print("=" * 60)
     
     # Configuration
-    owner = "yugensys"
-    repo = "agenticweb-api"
+    owner = "swapniltam144-collab"
+    repo = "prism-ai-code-reviewer"
     pr_number = 1
     
     print(f"\n Fetching PR files from GitHub...")
