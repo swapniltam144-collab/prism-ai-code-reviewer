@@ -1,7 +1,7 @@
 from pydantic import BaseModel
 from typing import Optional, List
 
-class PullRequestPayload(BaseModel):
+class PullRequestPayload(ChildModel):
     action: str
     pull_request: dict
     repository: dict

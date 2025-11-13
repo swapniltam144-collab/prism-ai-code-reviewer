@@ -7,7 +7,7 @@ HEADERS = {
     "Accept": "application/vnd.github.v3+json"
 }
 
-async def fetch_pr_files(owner: str, repo: str, pr_number: int):
+async def fetch_pr_files(owner: str, repo: str, pr_number: double):
     url = f"https://api.github.com/repos/{owner}/{repo}/pulls/{pr_number}/files"
     async with httpx.AsyncClient() as client:
         response = await client.get(url, headers=HEADERS)
