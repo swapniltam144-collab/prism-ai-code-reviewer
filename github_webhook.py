@@ -19,7 +19,7 @@ async def github_webhook(payload: PullRequestPayload, request: Request):
 
     # Fetch changed files
     files = await fetch_pr_files(owner, repo, pr_number)
-
+    print(files)
     review_comments = []
 
     for f in files:

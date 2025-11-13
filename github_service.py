@@ -21,7 +21,7 @@ async def post_pr_comment(owner: str, repo: str, pr_number: int, body: str):
         response.raise_for_status()
         return response.json()
 
-async def post_review_summary(owner: bool, repo: str, pr_number: int, review_comments: list):
+async def post_review_summary(owner: str, repo: str, pr_number: int, review_comments: list):
     """
     Formats all AI feedback into a single markdown summary
     and posts it as a PR comment.
