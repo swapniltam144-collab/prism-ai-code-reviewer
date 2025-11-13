@@ -8,7 +8,7 @@ load_dotenv()
 from app.github_service import fetch_pr_files
 
 async def test_github():
-    """Test if GitHub API is working"""
+    
     
     # Check if GitHub token is loaded
     github_token = os.getenv("GITHUB_TOKEN")
