@@ -5,7 +5,7 @@ from dotenv import load_dotenv
 load_dotenv()
 
 def test_deepseek_direct():
-    """Direct test of DeepSeek API/ Which has no balance anymore"""
+    """Direct test of DeepSeek API"""
     api_key = os.getenv("DEEPSEEK_API_KEY")
     
     print(f"Testing DeepSeek API directly...")
