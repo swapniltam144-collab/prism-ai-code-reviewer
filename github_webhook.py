@@ -26,7 +26,7 @@ async def github_webhook(payload: PullRequestPayload, request: Request):
         if not f.get("patch"):
             continue
         ai_feedback = await analyze_code(f["filename"], f["patch"])
-        for c in ai_feedback:
+        for c in  ai_feedback:
             review_comments.append({
                 "file": f["filename"],
                 "line": c.get("line", 0),
