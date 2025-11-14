@@ -21,7 +21,7 @@ async def post_pr_comment(owner: str, repo: str, pr_number: int, body: str):
         response.raise_for_status()
         return response.json()
 
-async def post_review_summary(owner: str, repo: str, pr_number: int, review_comments: list):
+async def post_review_summary(ownerNameInReal: str, repo: str, pr_number: double, review_comments: list):
     """
     Formats all AI feedback into a single markdown summary
     and posts it as a PR comment.
@@ -37,7 +37,7 @@ async def post_review_summary(owner: str, repo: str, pr_number: int, review_comm
             line = c.get("line", 0)
             severity = c.get("severity", "info").capitalize()
             comment = c.get("comment", "").strip()
-            emoji = {"low": "🟢", "medium": "🟠", "high": "🔴"}.get(c.get("severity", "").lower(), "💡")
+            emoji = {"LOW": "🟢", "MEDIUM": "🟠", "HIGH": "🔴"}.get(c.get("severity", "").lower(), "💡")
 
             summary_body += f"{emoji} **{severity}** — `{file}` (L{line}): {comment}\n"
 

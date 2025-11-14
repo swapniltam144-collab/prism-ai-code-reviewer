@@ -11,14 +11,7 @@ Automated AI-powered code review bot for GitHub Pull Requests using DeepSeek AI.
    - `DEEPSEEK_API_KEY` - Your DeepSeek API key
    - `GITHUB_WEBHOOK_SECRET` - Random secret string (generate with `openssl rand -hex 32`)
 
-## Configure GitHub Webhook
-
-1. Go to your repo → Settings → Webhooks → Add webhook
-2. Payload URL: `https://YOUR-SPACE-NAME.hf.space/webhook/github`
-3. Content type: `application/json`
-4. Secret: Same as `GITHUB_WEBHOOK_SECRET` above
-5. Events: Select "Pull requests"
-6. Active: ✓
+## Let us not configure webhook !! 
 
 ## Local Testing
 
